@@ -27,9 +27,6 @@ try:
         else:
           conn.send(data)
       #
-      print('Closing socket: ', addr, os.getpid())
-      conn.close()
-      print('Closed: ', addr)
       os._exit(0)
   #
   for pid in pids:
