@@ -22,11 +22,13 @@ try:
         except:
           continue
           
-        if not data or data.decode('utf-8') == 'close\r\n':
+        if data.decode('utf-8') == 'close\r\n':
           break
         else:
           conn.send(data)
       #
+      conn.close()
+      print('Closed: ', addr)
       os._exit(0)
   #
   for pid in pids:
