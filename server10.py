@@ -4,7 +4,7 @@ class EchoHandler(asyncore.dispatcher_with_send):
 	def handle_read(self):
 		data = self.recv('1024')
 		if data:
-			if data == 'close':
+			if data == 'close' or not data:
 				self.close()
 			else:
 				print(data)
