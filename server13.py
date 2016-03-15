@@ -20,7 +20,6 @@ class EchoServer(asyncore.dispatcher):
 		pair = self.accept()
 		if pair is not None:
 			sock, addr = pair
-			print repr(addr)
 			handler = EchoHandler(sock)
 server = EchoServer('0.0.0.0', 2222)
 asyncore.loop()
